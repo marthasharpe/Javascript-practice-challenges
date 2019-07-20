@@ -65,3 +65,22 @@ class Vegetable {
 }
 const carrot = new Vegetable('carrot');
 console.log(carrot.name);
+
+//Getters and Setters
+function makeClass() {
+  class Thermostat {
+    constructor(fahrenheit) {
+      this.fahrenheit = fahrenheit;
+    }
+    get celcius() {
+      return this.fahrenheit;
+    }
+    set celcius(fahrenheit) {
+      this.fahrenheit = 5/9 * (fahrenheit - 32);
+    }
+  }
+  return Thermostat;
+}
+const Thermostat = makeClass();
+const thermos = new Thermostat(76);
+console.log(thermos);
