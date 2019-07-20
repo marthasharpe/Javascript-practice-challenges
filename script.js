@@ -11,3 +11,12 @@ let arr2;
   arr2 = [...arr1];
 })();
 console.log(arr2);
+
+//Destructuring Assignment
+const scotchSoda = {
+  Glass: 'Highball',
+  Spirit: 'Scotch',
+  Mixer: 'Soda',
+}
+const {Glass : x, Spirit : y, Mixer : z} = scotchSoda;
+console.log(y);
