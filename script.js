@@ -41,3 +41,27 @@ function removeFirstTwo(list) {
 const rest = removeFirstTwo(source);
 console.log(rest);
 console.log(source);
+
+//Destructuring to pass an object as function parameters
+const stats = {
+  max: 56.78,
+  median: 34.54,
+  min: -0.75,
+  average: 35.85
+};
+const half = (function() {
+  return function half({max, min}) {
+    return (max + min) / 2.0;
+  };
+})();
+console.log(stats);
+console.log(half(stats));
+
+//Class Constructor Functions
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const carrot = new Vegetable('carrot');
+console.log(carrot.name);
