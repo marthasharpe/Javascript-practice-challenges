@@ -12,7 +12,7 @@ let arr2;
 })();
 console.log(arr2);
 
-//Destructuring Assignment
+//Destructuring Assignment to Assign Variables from Objects
 const scotchSoda = {
   Glass: 'Highball',
   Spirit: 'Scotch',
@@ -20,3 +20,24 @@ const scotchSoda = {
 }
 const {Glass : x, Spirit : y, Mixer : z} = scotchSoda;
 console.log(y);
+
+//Destructuring Assignment to Assign Variables from Nested Objects
+const LOCAL_FORECAST = {
+  today: { min: 72, max: 83 },
+  tomorrow: { min: 73.3, max: 84.6 }
+};
+function getMaxOfTmrw(forecast) {
+  const { tomorrow : { max : maxOfTomorrow}} = forecast;
+  return maxOfTomorrow;
+}
+console.log(getMaxOfTmrw(LOCAL_FORECAST));
+
+//Destructuring with Rest Operator
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  const [a, b, ...rest] = list;
+  return rest;
+}
+const rest = removeFirstTwo(source);
+console.log(rest);
+console.log(source);
