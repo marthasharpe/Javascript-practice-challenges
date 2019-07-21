@@ -81,3 +81,21 @@ console.log(user.fullName);
 user.fullName = "Alice Cooper";
 console.log(user.name);
 console.log(user.surname);
+
+//Regular Expressions
+//.test()
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString);
+//.match()
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/;
+let result = extractStr.match(codingRegex);
+// -i flag ignores cases, -g flag gets all instances
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/ig;
+let result = twinkleStar.match(starRegex);
+// . matches any character
+let exampleStr = "Let's have a tun of fun with regular expressions!";
+let unRegex = /.un/g;
+let result = unRegex.test(exampleStr);
