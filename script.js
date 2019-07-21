@@ -67,20 +67,17 @@ const carrot = new Vegetable('carrot');
 console.log(carrot.name);
 
 //Getters and Setters
-function makeClass() {
-  class Thermostat {
-    constructor(fahrenheit) {
-      this.fahrenheit = fahrenheit;
-    }
-    get celcius() {
-      return this.fahrenheit;
-    }
-    set celcius(fahrenheit) {
-      this.fahrenheit = 5/9 * (fahrenheit - 32);
-    }
+let user = {
+  name: "John",
+  surname: "Smith",
+  get fullName() {
+    return `${this.name} ${this.surname}`;
+  },
+  set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
   }
-  return Thermostat;
-}
-const Thermostat = makeClass();
-const thermos = new Thermostat(76);
-console.log(thermos);
+};
+console.log(user.fullName);
+user.fullName = "Alice Cooper";
+console.log(user.name);
+console.log(user.surname);
