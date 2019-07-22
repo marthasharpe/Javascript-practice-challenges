@@ -85,8 +85,8 @@ console.log(user.surname);
 //Regular Expressions
 //.test()
 let myString = "Hello, World!";
-let myRegex = /Hello/;
-let result1 = myRegex.test(myString);
+let stringRegex = /Hello/;
+let result1 = stringRegex.test(myString);
 console.log(result1);
 
 //.match()
@@ -108,13 +108,34 @@ let result4 = unRegex.test(exampleStr);
 console.log(result4);
 
 // square brackets match character sets
-let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let bugQuote = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
 let vowelRegex = /[aeiou]/ig;//will find all vowels
-let result5 = quoteSample.match(vowelRegex);
+let result5 = bugQuote.match(vowelRegex);
 console.log(result5);
 
 // a hyphen matches all characters or numbers in a range
 let userName = "MarthaSharpe2020";
-let myRegex = /[a-z0-9]/ig;
-let result6 = userName.match(myRegex);
+let rangeRegex = /[a-z0-9]/ig;
+let result6 = userName.match(rangeRegex);
 console.log(result6);
+
+// a carat designates the characters NOT to match
+let miceQuote = "3 blind mice.";
+let caratRegex = /[^aeiou0-9]/ig;
+let result7 = bugQuote.match(caratRegex);
+console.log(result7);
+
+// + finds characters that occur one or more times
+let difficultSpelling = "Mississippi Sisters";
+let manyRegex = /s+/gi;
+let result8 = difficultSpelling.match(manyRegex);
+console.log(result8);
+
+// * finds characers that occur zero or more times
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+console.log(soccerWord.match(goRegex));
+console.log(gPhrase.match(goRegex));
+console.log(oPhrase.match(goRegex));
