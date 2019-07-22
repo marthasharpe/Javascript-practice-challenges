@@ -86,16 +86,35 @@ console.log(user.surname);
 //.test()
 let myString = "Hello, World!";
 let myRegex = /Hello/;
-let result = myRegex.test(myString);
+let result1 = myRegex.test(myString);
+console.log(result1);
+
 //.match()
 let extractStr = "Extract the word 'coding' from this string.";
 let codingRegex = /coding/;
-let result = extractStr.match(codingRegex);
-// -i flag ignores cases, -g flag gets all instances
+let result2 = extractStr.match(codingRegex);
+console.log(result2);
+
+// -i insensitive flag ignores cases, -g global flag gets all instances
 let twinkleStar = "Twinkle, twinkle, little star";
 let starRegex = /twinkle/ig;
-let result = twinkleStar.match(starRegex);
+let result3 = twinkleStar.match(starRegex);
+console.log(result3);
+
 // . matches any character
 let exampleStr = "Let's have a tun of fun with regular expressions!";
 let unRegex = /.un/g;
-let result = unRegex.test(exampleStr);
+let result4 = unRegex.test(exampleStr);
+console.log(result4);
+
+// square brackets match character sets
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/ig;//will find all vowels
+let result5 = quoteSample.match(vowelRegex);
+console.log(result5);
+
+// a hyphen matches all characters or numbers in a range
+let userName = "MarthaSharpe2020";
+let myRegex = /[a-z0-9]/ig;
+let result6 = userName.match(myRegex);
+console.log(result6);
