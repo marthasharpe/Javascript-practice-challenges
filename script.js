@@ -139,3 +139,10 @@ let goRegex = /go*/;
 console.log(soccerWord.match(goRegex));
 console.log(gPhrase.match(goRegex));
 console.log(oPhrase.match(goRegex));
+
+//greedy vs. lazy quantifiers
+let greedy = /".+"/g;
+let lazy = /".+?"/g;
+let str = 'a "witch" and her "broom" is one';
+console.log(str.match(greedy));
+console.log(str.match(lazy));
