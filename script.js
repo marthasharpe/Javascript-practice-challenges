@@ -119,10 +119,10 @@ let rangeRegex = /[a-z0-9]/ig;
 let result6 = userName.match(rangeRegex);
 console.log(result6);
 
-// a carat designates the characters NOT to match
+// a caret designates the characters NOT to match
 let miceQuote = "3 blind mice.";
-let caratRegex = /[^aeiou0-9]/ig;
-let result7 = bugQuote.match(caratRegex);
+let caretRegex = /[^aeiou0-9]/ig;
+let result7 = bugQuote.match(caretRegex);
 console.log(result7);
 
 // + finds characters that occur one or more times
@@ -146,3 +146,11 @@ let lazy = /".+?"/g;
 let str = 'a "witch" and her "broom" is one';
 console.log(str.match(greedy));
 console.log(str.match(lazy));
+
+// caret searches for a match at the beginning of strings
+// dollar sign searches at the end of strings
+let train = "engine or caboose";
+let start = /^engine/;
+let end = /caboose$/;
+console.log(start.test(train));
+console.log(end.test(train));
