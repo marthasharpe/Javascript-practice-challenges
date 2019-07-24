@@ -154,3 +154,24 @@ let start = /^engine/;
 let end = /caboose$/;
 console.log(start.test(train));
 console.log(end.test(train));
+
+// \w is short for [A-Za-z0-9_], all alphanumeric characters
+let userSearch = "Figaro_1990";
+let alphabetRegexV2 = /\w/g;
+let result9 = userSearch.match(alphabetRegexV2).length;
+console.log(result9);
+
+// \W is short for [^A-Za-z0-9_], all non-alphanumeric characters
+let shortHand = /\W/;
+let numbers = "42%";
+let sentence = "Coding!";
+console.log(numbers.match(shortHand));
+console.log(sentence.match(shortHand));
+
+// \d is short for [0-9], a single digit
+// \D is short for [^0-9], a single non-digit
+let numString = "The Magnificent 7";
+let numRegex = /\d/g;
+let noNumRegex = /\D/g;
+console.log(numString.match(numRegex).length);
+console.log(numString.match(noNumRegex).length);
