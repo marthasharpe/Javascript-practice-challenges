@@ -167,10 +167,19 @@ let noNumRegex = /\D/g;
 console.log(numString.match(numRegex).length);//16
 console.log(numString.match(noNumRegex).length);//1
 
-// curly braces indicate number of repetitions allowed: e.g. {2,4} no fewer than 2 no more than 4
+// quatity specifiers are denoted by curly braces to indicate the number of repetitions
+// {3,5} no less than 3 and no more than 5
+// {3,} no less than three and no upper limit
+// {3} exactly three
+let A4 = "aaaah";
+let A2 = "aah";
+let multipleA = /a{3,5}h/;
+console.log(multipleA.test(A4));//true
+console.log(multipleA.test(A2));//false
+
+//case-insensitive, letters at the beginning, no fewer than 2, zero or more numbers at the end
 let username = "JackOfAllTrades";
 let userCheck = /^[a-z]{2,}\d*$/i;
-//case-insensitive, letters at the beginning, no fewer than 2, zero or more numbers at the end
 console.log(userCheck.test(username));//true
 
 // \s matches white space including \r (return), \t (tab), \f (form-feed), \n (new-line), \v (vertical tab)
@@ -180,3 +189,16 @@ let countWhiteSpace = /\s/g;
 let countNonWhiteSpace = /\S/g;
 console.log(sample.match(countWhiteSpace).length);//5
 console.log(sample.match(countNonWhiteSpace).length);//38
+
+// ? makes the character optional
+let american = "color";
+let british = "colour";
+let rainbowRegex= /colou?r/;
+console.log(rainbowRegex.test(american)); //true
+console.log(rainbowRegex.test(british)); //true
+
+//Lookaheads: (?= looks ahead to see if the pattern is there) (?! looks ahead to see if the pattern is not there)
+let password = "abc123";
+let checkPass = /(?=\w{4,8})(?=\D*\d{1,})/;
+console.log(checkPass.test(password)); //true
+
