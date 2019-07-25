@@ -228,9 +228,7 @@ console.log(hello.replace(wsRegex, ""));
 
 
 //console.clear() clears the console of any previous code
-console.clear();
-
-// typeof tells what datatype a variable is: Boolean, Number, Null, Undefined, String, Symbol, Object
+//typeof tells what datatype a variable is: Boolean, Number, Null, Undefined, String, Symbol, Object
 let seven = 7;
 let three = "3";
 console.log(seven + three);//73
@@ -278,4 +276,17 @@ function copyMachine(arr, num) {
 }
 console.log(copyMachine([true, false, true], 2));//[[true, false, true],[true, false, true]]
 
+// use spread operator to spread one array into another
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun']; // change this line
+  return sentence;
+}
+console.log(spreadOut());//['learning', 'to', 'code', 'is', 'fun']
 
+// indexOf(some element) returns the index of the element or -1 if it doesn't exist
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
+fruits.indexOf('dates') // returns -1
+fruits.indexOf('oranges') // returns 2
+fruits.indexOf('pears') // returns 1
+console.clear();
