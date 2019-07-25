@@ -289,4 +289,16 @@ let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
 fruits.indexOf('dates') // returns -1
 fruits.indexOf('oranges') // returns 2
 fruits.indexOf('pears') // returns 1
+
+// use for loops to iterate through an array
+function filterHighNumbers(numberArray) {
+  let greaterThanTen = [];
+  for (let i = 0; i < numberArray.length; i++) {
+    if (numberArray[i] > 10) {
+      greaterThanTen.push(numberArray[i]);
+    }
+  }
+  return greaterThanTen;
+}
+console.log(filterHighNumbers([2, 12, 8, 14, 80, 0, 1]));//[12, 14, 80]
 console.clear();
