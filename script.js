@@ -202,3 +202,20 @@ let password = "abc123";
 let checkPass = /(?=\w{4,8})(?=\D*\d{1,})/;
 console.log(checkPass.test(password)); //true
 
+//Capturing groups in parentheses: \1 denotes the first capture group, \2 the second, etc.
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; //^ and $ denote the beginning and end
+console.log(repeatNum.match(reRegex)); //["42 42 42", "42"]
+
+//Use capture groups to search and replace
+let huhText = "This sandwich is good.";
+let fixRegex = /good/;
+let replaceText = "okey-dokey";
+console.log(huhText.replace(fixRegex, replaceText));//This sandwich is okey-dokey.
+//access capture groups with dollar signs
+console.log("Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1'));//"Camp Code"
+
+// remove whitespace without .trim() using | in regular expressions
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/;
+console.log(hello.replace(wsRegex, ""));
