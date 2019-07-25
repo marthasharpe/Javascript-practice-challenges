@@ -82,7 +82,10 @@ user.fullName = "Alice Cooper";
 console.log(user.name);
 console.log(user.surname);
 
+
 //Regular Expressions
+
+
 //.test()
 let myString = "Hello, World!";
 let stringRegex = /Hello/;
@@ -219,3 +222,17 @@ console.log("Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1'));//"Camp Code"
 let hello = "   Hello, World!  ";
 let wsRegex = /^\s+|\s+$/;
 console.log(hello.replace(wsRegex, ""));
+
+
+//Debugging
+
+
+//console.clear() clears the console of any previous code
+console.clear();
+
+// typeof tells what datatype a variable is: Boolean, Number, Null, Undefined, String, Symbol, Object
+let seven = 7;
+let three = "3";
+console.log(seven + three);//73
+console.log(typeof seven);//number
+console.log(typeof three);//string
