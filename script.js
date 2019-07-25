@@ -236,3 +236,13 @@ let three = "3";
 console.log(seven + three);//73
 console.log(typeof seven);//number
 console.log(typeof three);//string
+
+
+//Basic Data Structures
+
+
+let myArray = ["Martha", 34, { married: true, children: ["Abraham", "Elsa", "Elanor", "Eowyn"] }, "female"];
+let myName = myArray[0];//Martha
+console.log(myName);
+myArray[1] = 35;
+console.log(myArray[1]);
