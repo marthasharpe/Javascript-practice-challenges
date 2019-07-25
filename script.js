@@ -241,8 +241,41 @@ console.log(typeof three);//string
 //Basic Data Structures
 
 
+//Creating and modifying Arrays
 let myArray = ["Martha", 34, { married: true, children: ["Abraham", "Elsa", "Elanor", "Eowyn"] }, "female"];
-let myName = myArray[0];//Martha
-console.log(myName);
+let myName = myArray[0];
+  console.log(myName);//Martha
 myArray[1] = 35;
-console.log(myArray[1]);
+  console.log(myArray[1]);//35
+
+// .push() .unshift() .pop() .shift()
+let haircolor = "blonde";
+myArray.push(haircolor);
+myArray.unshift("web developer");
+  console.log(myArray);//["web developer", "Martha", 35, {…}, "female", "blonde"]
+myArray.pop()
+let occupation = myArray.shift();
+  console.log(occupation);//web developer
+  console.log(myArray);//["Martha", 35, {…}, "female"]
+
+// .splice(starting index, how many items to remove, optional value(s) to add)
+let family = myArray.splice(2, 1, "married");
+  console.log(family);//[{…}]
+  myArray.splice(1, 0, "Sharpe")
+  console.log(myArray);//["Martha", "Sharpe", 35, "married", "female"]
+// .slice(starting index, stopping index) doesn't modify original array
+let nameArray = myArray.slice(0, 2);
+  console.log(nameArray); //["Martha", "Sharpe"];
+
+// spread operator [...] copies an entire array without modifying the original
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    newArr.push([...arr]);
+    num--;
+  }
+  return newArr;
+}
+console.log(copyMachine([true, false, true], 2));//[[true, false, true],[true, false, true]]
+
+
