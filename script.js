@@ -302,3 +302,21 @@ function filterHighNumbers(numberArray) {
 }
 console.log(filterHighNumbers([2, 12, 8, 14, 80, 0, 1]));//[12, 14, 80]
 console.clear();
+//Create Objects with key-value pairs or properties
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+};
+
+//add properties using dot or bracket notation
+foods.grapes = 35;
+foods['strawberries'] = 27;
+console.log(foods);//adds grapes: 35 and strawberries: 27
+
+//access property names with bracket notation
+function checkInventory(scannedItem) {
+  return foods[scannedItem];
+}
+console.log(checkInventory("apples"));//25
