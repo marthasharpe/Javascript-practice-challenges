@@ -400,5 +400,11 @@ function findLongestWordLength(str) {
   let longestWord = wordArray.reduce((a, b) => a.length > b.length ? a : b);
   return longestWord.length;
 }
-console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
+console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));//6
 
+//Return largest numbers in Arrays
+function largestOfFour(arr) {
+  return arr.map(subArr => {
+    return subArr.reduce((a, b) => a > b ? a : b)}
+  )}
+console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));//[5, 27, 39, 1001]
