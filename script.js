@@ -327,7 +327,7 @@ console.log(checkInventory("apples"));//25
 //check if an object has a property
 console.log(foods.hasOwnProperty('oranges'));//true
 console.log('oranges' in foods);//true
-console.clear();
+
 //Iterate through objects using for...in
 let users = {
   Alan: {
@@ -363,3 +363,33 @@ console.log(Object.keys(users));//["Alan", "Jeff", "Sarah", "Ryan"]
 for (let user in users) {
   console.log(user);
 }
+
+
+//Basic Algorithm Scripting
+
+console.clear();
+//Convert Celcius to Fahrenheit
+function convertToF(celsius) {
+  let fahrenheit = (celsius * 9/5) + 32;
+  return fahrenheit;
+}
+console.log(convertToF(30));//86
+
+//Reverse a String
+function reverseString(str) {
+  return str.split("").reverse().join("");//splits into array, reverses it, then joins it again
+}
+console.log(reverseString("hello"));//olleh
+
+//Factorialize a number
+function factorialize(num) {
+  if (num === 0 || num === 1) {
+    num = 1;
+  } else {
+  for (let i = num - 1; i >= 1; i--) {
+  num *= i;
+  }
+}
+  return num;
+}
+console.log(factorialize(5));
