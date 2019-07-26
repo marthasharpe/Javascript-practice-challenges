@@ -392,4 +392,13 @@ function factorialize(num) {
 }
   return num;
 }
-console.log(factorialize(5));
+console.log(factorialize(5));//120
+
+//Find longest word in a string
+function findLongestWordLength(str) {
+  let wordArray = str.split(/\s/);
+  let longestWord = wordArray.reduce((a, b) => a.length > b.length ? a : b);
+  return longestWord.length;
+}
+console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
+
