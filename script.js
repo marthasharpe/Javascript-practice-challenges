@@ -301,7 +301,7 @@ function filterHighNumbers(numberArray) {
   return greaterThanTen;
 }
 console.log(filterHighNumbers([2, 12, 8, 14, 80, 0, 1]));//[12, 14, 80]
-console.clear();
+
 //Create Objects with key-value pairs or properties
 let foods = {
   apples: 25,
@@ -309,6 +309,9 @@ let foods = {
   plums: 28,
   bananas: 13,
 };
+
+//delete keyword removes a property
+delete foods.plums;
 
 //add properties using dot or bracket notation
 foods.grapes = 35;
@@ -320,3 +323,42 @@ function checkInventory(scannedItem) {
   return foods[scannedItem];
 }
 console.log(checkInventory("apples"));//25
+
+//check if an object has a property
+console.log(foods.hasOwnProperty('oranges'));//true
+console.log('oranges' in foods);//true
+console.clear();
+//Iterate through objects using for...in
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+//Object.keys() returns an array of the keys in an object
+console.log(Object.keys(users));//["Alan", "Jeff", "Sarah", "Ryan"]
+for (let user in users) {
+  console.log(user);
+}
+function countOnline(obj) {
+  let counter = 0;
+  for (let user in obj) {
+    if (obj[user].online === true) {
+      counter++;
+    }
+  }
+  return counter;
+}
+console.log(countOnline(users));
