@@ -427,3 +427,13 @@ function repeatStringNumTimes(str, num) {
   return repeatString;
 }
 console.log(repeatStringNumTimes("abc", 3));//abcabcabc
+
+//Truncate a string with ...
+function truncateString(str, num) {
+  if (str.length > num) {
+    return `${str.substring(0, num)}...`;
+  } else if (str.length <= num) {
+    return str;
+  }
+}
+console.log(truncateString("Martha Dawn Sharpe", 8));//Martha D...
