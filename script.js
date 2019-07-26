@@ -408,3 +408,11 @@ function largestOfFour(arr) {
     return subArr.reduce((a, b) => a > b ? a : b)}
   )}
 console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));//[5, 27, 39, 1001]
+
+//Check string ending
+// .substring(start index, end index) returns part of the string
+// .
+function confirmEnding(str, target) {
+ return str.substring(str.length - target.length) === target ? true : false;
+}
+console.log(confirmEnding("He has to give me a new name", "name"));
