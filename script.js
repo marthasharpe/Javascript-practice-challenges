@@ -411,8 +411,19 @@ console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [10
 
 //Check string ending
 // .substring(start index, end index) returns part of the string
-// .
 function confirmEnding(str, target) {
  return str.substring(str.length - target.length) === target ? true : false;
 }
-console.log(confirmEnding("He has to give me a new name", "name"));
+console.log(confirmEnding("He has to give me a new name", "name"));//true
+
+//Repeat a string any number of times
+// str.repeat(num) would work
+function repeatStringNumTimes(str, num) {
+  let repeatString = '';
+  while (num > 0) {
+    repeatString += str;
+    num--;
+  }
+  return repeatString;
+}
+console.log(repeatStringNumTimes("abc", 3));//abcabcabc
