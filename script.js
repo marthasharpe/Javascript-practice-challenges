@@ -347,11 +347,6 @@ let users = {
     online: true
   }
 };
-//Object.keys() returns an array of the keys in an object
-console.log(Object.keys(users));//["Alan", "Jeff", "Sarah", "Ryan"]
-for (let user in users) {
-  console.log(user);
-}
 function countOnline(obj) {
   let counter = 0;
   for (let user in obj) {
@@ -362,3 +357,9 @@ function countOnline(obj) {
   return counter;
 }
 console.log(countOnline(users));
+
+//Object.keys() returns an array of the keys in an object
+console.log(Object.keys(users));//["Alan", "Jeff", "Sarah", "Ryan"]
+for (let user in users) {
+  console.log(user);
+}
