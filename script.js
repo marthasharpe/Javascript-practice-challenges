@@ -438,8 +438,13 @@ function truncateString(str, num) {
 }
 console.log(truncateString("Martha Dawn Sharpe", 8));//Martha D...
 
-//.filter()
+//.find() returns the first element in an array that satisfies a function
 function findElement(arr, func) {
   return arr.find(func);
 }
-console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));//2
+
+function booWho(bool) {
+  return typeof bool === 'boolean' ? true : false;
+}
+console.log(booWho(true));//boolean
