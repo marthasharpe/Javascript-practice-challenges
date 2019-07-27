@@ -444,7 +444,18 @@ function findElement(arr, func) {
 }
 console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));//2
 
+//Check if typeof input is a boolean
 function booWho(bool) {
   return typeof bool === 'boolean' ? true : false;
 }
-console.log(booWho(true));//boolean
+console.log(booWho(true));//true
+
+//Capitalize each word in a string
+function titleCase(str) {
+  let wordArray = str.toLowerCase().split(' ');
+  let title = wordArray.map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
+  return title.join(' ');
+}
+console.log(titleCase("I'm a little tea pot"));
