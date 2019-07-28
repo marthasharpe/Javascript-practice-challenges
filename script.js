@@ -476,5 +476,12 @@ function bouncer(arr) {
   let truthyArray = arr.filter(elem => elem ? true : false);
   return truthyArray;
 }
-console.log(bouncer([7, "ate", "", false, 9]));
+console.log(bouncer([7, "ate", "", false, 9]));//[7, "ate", 9]
 
+//Find the index where a number should go in a sorted array
+function getIndexToIns(arr, num) {
+let orderedArray = arr.sort((a, b) => a - b);
+let lowestIndex = orderedArray.findIndex(element => element >= num);
+return lowestIndex === -1 ? arr.length : lowestIndex;
+}
+console.log(getIndexToIns([40, 60], 50));//1
