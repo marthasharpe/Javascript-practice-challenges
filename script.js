@@ -459,3 +459,15 @@ function titleCase(str) {
   return title.join(' ');
 }
 console.log(titleCase("I'm a little tea pot"));
+
+//Insert one array into another at a given index
+function frankenSplice(arr1, arr2, n) {
+  let insideArray = arr1.slice(0);
+  let endArray = arr2.slice(0);
+  insideArray.forEach(element => {
+    endArray.splice(n++, 0, element);
+  });
+  return endArray;
+}
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));//[4, 1, 2, 3, 5, 6]
+
