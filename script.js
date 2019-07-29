@@ -532,3 +532,12 @@ let teacher2 = new KarateTeacher("Dan", 1);
 //instanceof checks whether an object is the instance of a constructor function
 console.log(teacher1 instanceof KarateTeacher);
 console.log(teacher2 instanceof KarateTeacher);
+
+//Push properties of an object into an array using .hasOwnProperty
+let teacher2Props =[];
+for (let property in teacher2) {
+  if (teacher2.hasOwnProperty(property)) {
+    teacher2Props.push(property);
+  }
+}
+console.log(teacher2Props)//["name", "beltDegree", "sayName"]
