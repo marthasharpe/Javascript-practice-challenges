@@ -494,3 +494,14 @@ function mutation(arr) {
 }
 console.log(mutation(["hEllo", "hell"]));//true
 
+//Split array into 2-dimensional array
+function chunkArrayInGroups(arr, size) {
+  let splitArray = [];
+  let index = 0;
+  while (arr.length > index) {
+    splitArray.push(arr.slice(index, index + size));
+    index += size;
+  }
+  return splitArray;
+}
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));//[["a", "b"], ["c", "d"]]
