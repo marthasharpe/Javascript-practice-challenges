@@ -514,9 +514,21 @@ console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));//[["a", "b"], ["c", "d
 
 console.clear();
 //Create object with properties and methods
-let karateMaster = {
+let teacher1 = {
   name: "Kyle",
   beltDegree: 2,
   sayName: function() {return `I am Sensei ${this.name}.`}
 }
-console.log(karateMaster.sayName());
+console.log(teacher1.sayName());//I am Sensei Kyle.
+
+//Constructor function for creating new instances of objects
+function KarateTeacher(name, beltDegree) {
+  this.name = name;
+  this.beltDegree = beltDegree;
+  this.sayName = function() {return `I am Sensei ${this.name}.`};
+}
+let teacher2 = new KarateTeacher("Dan", 1);
+
+//instanceof checks whether an object is the instance of a constructor function
+console.log(teacher1 instanceof KarateTeacher);
+console.log(teacher2 instanceof KarateTeacher);
