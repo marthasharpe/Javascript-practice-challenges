@@ -473,7 +473,7 @@ console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));//[4, 1, 2, 3, 5, 6]
 
 //Remove all falsy values from an array
 function bouncer(arr) {
-  let truthyArray = arr.filter(elem => elem ? true : false);
+  let truthyArray = arr.filter(elem => elem ? true : false)
   return truthyArray;
 }
 console.log(bouncer([7, "ate", "", false, 9]));//[7, "ate", 9]
@@ -485,3 +485,12 @@ let lowestIndex = orderedArray.findIndex(element => element >= num);
 return lowestIndex === -1 ? arr.length : lowestIndex;
 }
 console.log(getIndexToIns([40, 60], 50));//1
+
+//Compare the letters in two strings
+function mutation(arr) {
+  let str1 = arr[0].toLowerCase().split('');
+  let str2 = arr[1].toLowerCase().split('');
+  return str2.every(letter => str1.indexOf(letter) === -1 ? false : true);
+}
+console.log(mutation(["hEllo", "hell"]));//true
+
