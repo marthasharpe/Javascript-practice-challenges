@@ -367,7 +367,7 @@ for (let user in users) {
 
 //Basic Algorithm Scripting
 
-console.clear();
+
 //Convert Celcius to Fahrenheit
 function convertToF(celsius) {
   let fahrenheit = (celsius * 9/5) + 32;
@@ -502,6 +502,21 @@ function chunkArrayInGroups(arr, size) {
     splitArray.push(arr.slice(index, index + size));
     index += size;
   }
+  // for (let i=0; i < arr.length; i += size) {
+  //   splitArray.push(arr.slice(i, i + size));
+  // }
   return splitArray;
 }
 console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));//[["a", "b"], ["c", "d"]]
+
+
+// Object Oriented Programming
+
+console.clear();
+//Create object with properties and methods
+let karateMaster = {
+  name: "Kyle",
+  beltDegree: 2,
+  sayName: function() {return `I am Sensei ${this.name}.`}
+}
+console.log(karateMaster.sayName());
