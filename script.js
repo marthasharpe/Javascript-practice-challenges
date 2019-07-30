@@ -583,3 +583,41 @@ beagle.eat();//snarf
 //use .isPropertyOf instead of instanceof when not using a constructor function
 console.log(Dog.prototype.isPrototypeOf(beagle));//true
 console.log(beagle instanceof Dog);//true
+
+//Create parent objects for inheritance
+function Pet() {};
+Dog.prototype = Object.create(Pet.prototype);
+Dog.prototype.constructor = Dog;
+
+//Immediately Invoked Function Expression (IIFE)
+(function () {
+  console.log("Hey, there!");
+})(); //parentheses call the anonymous function immediately
+
+//Mixins let unrelated objects share a method
+function glideMixin(obj) {
+  obj.glide = function() {
+    console.log("Gliding on the water");
+  }
+}//obj could be a bug or a boat
+function flyMixin(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  }
+}//obj could be a bird or a plane
+
+//Mixins can be grouped into modules
+let motionModule = (function () {
+  return {
+    glideMixin: function (obj) {
+      obj.glide = function() {
+        console.log("Gliding on the water");
+      };
+    },
+    flyMixin: function(obj) {
+      obj.fly = function() {
+        console.log("Flying, wooosh!");
+      };
+    }
+  }
+}) ();//this module could be used by a duck object
