@@ -568,3 +568,10 @@ for (let property in beagle) {
 }
 console.log(ownProps);
 console.log(prototypeProps);
+
+//add many properties to a prototype at once
+Dog.prototype = {
+  constructor: Dog,//define the constructor property or it will be erased
+  eat: () => console.log("snarf"),
+  describe: () => console.log(`I have ${this.numLegs}.`)
+};
