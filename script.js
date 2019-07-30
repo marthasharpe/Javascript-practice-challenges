@@ -485,7 +485,7 @@ let lowestIndex = orderedArray.findIndex(element => element >= num);
 return lowestIndex === -1 ? arr.length : lowestIndex;
 }
 console.log(getIndexToIns([40, 60], 50));//1
-console.clear();
+
 //Compare the letters in two strings
 function mutation(arr) {
   let str1 = arr[0].toLowerCase();
@@ -496,7 +496,6 @@ function mutation(arr) {
     }
   }
   return true;
-  //return str2.every(letter => str1.indexOf(letter) === -1 ? false : true);
 }
 console.log(mutation(["hEllo", "hell"]));//true
 
@@ -518,7 +517,7 @@ console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));//[["a", "b"], ["c", "d
 
 // Object Oriented Programming
 
-//console.clear();
+console.clear();
 //Create object with properties and methods
 let teacher1 = {
   name: "Kyle",
@@ -547,3 +546,25 @@ for (let property in teacher2) {
   }
 }
 console.log(teacher2Props)//["name", "beltDegree", "sayName"]
+
+//prototype creates properties on the prototype object, different than "own" properties
+KarateTeacher.prototype.beltColor = "black";
+console.log(teacher2.beltColor);//black
+
+//ownProps v.s prototypeProps
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+let beagle = new Dog("Snoopy");
+let ownProps = [];
+let prototypeProps = [];
+for (let property in beagle) {
+  if (beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  };
+}
+console.log(ownProps);
+console.log(prototypeProps);
