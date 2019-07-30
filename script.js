@@ -485,12 +485,18 @@ let lowestIndex = orderedArray.findIndex(element => element >= num);
 return lowestIndex === -1 ? arr.length : lowestIndex;
 }
 console.log(getIndexToIns([40, 60], 50));//1
-
+console.clear();
 //Compare the letters in two strings
 function mutation(arr) {
-  let str1 = arr[0].toLowerCase().split('');
-  let str2 = arr[1].toLowerCase().split('');
-  return str2.every(letter => str1.indexOf(letter) === -1 ? false : true);
+  let str1 = arr[0].toLowerCase();
+  let str2 = arr[1].toLowerCase();
+  for (let i=0; i<str2.length; i++) {
+    if (str1.indexOf(str2[i]) === -1) {
+      return false;
+    }
+  }
+  return true;
+  //return str2.every(letter => str1.indexOf(letter) === -1 ? false : true);
 }
 console.log(mutation(["hEllo", "hell"]));//true
 
@@ -512,7 +518,7 @@ console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));//[["a", "b"], ["c", "d
 
 // Object Oriented Programming
 
-console.clear();
+//console.clear();
 //Create object with properties and methods
 let teacher1 = {
   name: "Kyle",
