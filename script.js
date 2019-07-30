@@ -576,6 +576,10 @@ Dog.prototype = {
   describe: () => console.log(`I have ${this.numLegs}.`)
 };
 
+//create instance of prototype using .create
+beagle = Object.create(Dog.prototype);
+beagle.eat();//snarf
+
 //use .isPropertyOf instead of instanceof when not using a constructor function
-console.log(Dog.prototype.isPrototypeOf(beagle));//false??? Did not inherit the added properties after its initialization
-console.log(beagle instanceof Dog);
+console.log(Dog.prototype.isPrototypeOf(beagle));//true
+console.log(beagle instanceof Dog);//true
