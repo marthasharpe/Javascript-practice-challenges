@@ -665,6 +665,22 @@ var watchList = [
     "Type": "movie",
     "Response": "True"
   },
+  {  
+    "Title": "Interstellar",
+    "Year": "2014",
+    "Rated": "PG-13",
+    "Released": "07 Nov 2014",
+    "Runtime": "169 min",
+    "Genre": "Adventure, Drama, Sci-Fi",
+    "Director": "Christopher Nolan",
+    "Writer": "Jonathan Nolan, Christopher Nolan",
+    "Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
+    "imdbRating": "8.6",
+    "imdbVotes": "910,366",
+    "imdbID": "tt0816692",
+    "Type": "movie",
+    "Response": "True"
+  },
   {
     "Title": "Avatar",
     "Year": "2009",
@@ -683,12 +699,19 @@ var watchList = [
   }
 ];
 
-//use .map
+//use .map to return title and rating
 let movieRating = watchList.map(movie => {return {"title":movie["Title"], "rating":movie["imdbRating"]}});
 console.log(movieRating);
-//use .filter
+
+//use .filter to find ratings above 8.0
 let highRating = movieRating.filter(movie => movie.rating >= 8.0);
 console.log(highRating);
+
+//use .reduce to find average ratings of Christopher Nolan movies
+let nolanFilms = watchList.filter(movie => movie.Director === "Christopher Nolan");
+let nolanRatings = nolanFilms.map(movie => Number(movie.imdbRating));
+let averageRating = nolanRatings.reduce((a, b) => a + b) / nolanFilms.length;
+console.log(averageRating); 
 
 //make .forEach behave like .map or .filter
 var s = [23, 65, 98, 5];
