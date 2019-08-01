@@ -751,3 +751,11 @@ nonMutatingConcat = (original, attach) => {
 var first = [1, 2, 3];
 var second = [4, 5];
 console.log(nonMutatingConcat(first, second));//[1, 2, 3, 4, 5]
+
+//use .sort
+var globalArray = [5, 6, 3, 2, 9];
+nonMutatingSort = (arr) => {
+  let sorted = arr.concat().sort((a, b) => a - b);//.concat can be used to clone an array
+  return sorted;
+}
+nonMutatingSort(globalArray);
