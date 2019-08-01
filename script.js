@@ -687,15 +687,27 @@ var watchList = [
 let movieRating = watchList.map(movie => {return {"title":movie["Title"], "rating":movie["imdbRating"]}});
 console.log(movieRating);
 //use .filter
-let highRating = rating.filter(movie => movie.rating >= 8.0);
+let highRating = movieRating.filter(movie => movie.rating >= 8.0);
 console.log(highRating);
 
-//make .forEach behave like .map
+//make .forEach behave like .map or .filter
 var s = [23, 65, 98, 5];
 Array.prototype.myMap = (callback) => {
   var newArray = [];
   s.forEach(input => newArray.push(callback(input)));
   return newArray;
 }
-var new_s = s.myMap(item => item * 2);
-console.log(new_s);
+Array.prototype.myFilter = (callback) => {
+  var newArray = [];
+  s.forEach(input => {
+    if (callback(input) === true) {
+      newArray.push(input)
+    }
+})
+return newArray;
+}
+
+var map_s = s.myMap(item => item * 2);
+console.log(map_s);
+var filter_s = s.myFilter(item => item % 2 === 1);
+console.log(filter_s);
