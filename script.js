@@ -711,3 +711,20 @@ var map_s = s.myMap(item => item * 2);
 console.log(map_s);
 var filter_s = s.myFilter(item => item % 2 === 1);
 console.log(filter_s);
+
+//use .slice
+sliceArray = (anim, beginSlice, endSlice) => {
+  let animArray = anim.slice(beginSlice, endSlice)
+  return animArray;
+}
+var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+console.log(sliceArray(inputAnim, 1, 3));//["Dog", "Tiger"]
+
+//use .concat
+nonMutatingConcat = (original, attach) => {
+ let concatenated = original.concat(attach);
+ return concatenated;
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+console.log(nonMutatingConcat(first, second));//[1, 2, 3, 4, 5]
