@@ -648,7 +648,6 @@ var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The El
 
 console.log(bookList);
 
-//.map
 var watchList = [
   {  
     "Title": "Inception",
@@ -665,27 +664,31 @@ var watchList = [
     "imdbID": "tt1375666",
     "Type": "movie",
     "Response": "True"
- },
- {  
-    "Title": "Interstellar",
-    "Year": "2014",
+  },
+  {
+    "Title": "Avatar",
+    "Year": "2009",
     "Rated": "PG-13",
-    "Released": "07 Nov 2014",
-    "Runtime": "169 min",
-    "Genre": "Adventure, Drama, Sci-Fi",
-    "Director": "Christopher Nolan",
-    "Writer": "Jonathan Nolan, Christopher Nolan",
-    "Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
-    "imdbRating": "8.6",
-    "imdbVotes": "910,366",
-    "imdbID": "tt0816692",
+    "Released": "18 Dec 2009",
+    "Runtime": "162 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "James Cameron",
+    "Writer": "James Cameron",
+    "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+    "imdbRating": "7.9",
+    "imdbVotes": "876,575",
+    "imdbID": "tt0499549",
     "Type": "movie",
     "Response": "True"
- },
+  }
 ];
 
-let rating = watchList.map((movie) => ({"title":movie["Title"], "rating":movie["imdbRating"]}))
-console.log(rating);
+//use .map
+let movieRating = watchList.map(movie => {return {"title":movie["Title"], "rating":movie["imdbRating"]}});
+console.log(movieRating);
+//use .filter
+let highRating = rating.filter(movie => movie.rating >= 8.0);
+console.log(highRating);
 
 //make .forEach behave like .map
 var s = [23, 65, 98, 5];
