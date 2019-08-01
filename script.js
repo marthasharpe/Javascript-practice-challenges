@@ -758,4 +758,16 @@ nonMutatingSort = (arr) => {
   let sorted = arr.concat().sort((a, b) => a - b);//.concat can be used to clone an array
   return sorted;
 }
-nonMutatingSort(globalArray);
+console.log(nonMutatingSort(globalArray));//[2, 3, 5, 6, 9]
+
+//use .split with regex
+splitify = (str) => {
+  return str.split(/\W/);
+}
+console.log(splitify("Hello World,I-am code"));//["Hello", "World", "I", "am", "code"]
+
+//use .join to create a sentence
+sentensify = (str) => {
+ return str.split(/\W/).join(' ');
+}
+console.log(sentensify("May-the-force-be-with-you"));
