@@ -770,4 +770,12 @@ console.log(splitify("Hello World,I-am code"));//["Hello", "World", "I", "am", "
 sentensify = (str) => {
  return str.split(/\W/).join(' ');
 }
-console.log(sentensify("May-the-force-be-with-you"));
+console.log(sentensify("May-the-force-be-with-you"));//May the force be with you
+
+//make a title into url format
+var globalTitle = " Winter Is  Coming";
+urlSlug = (title) => {
+  return title.toLowerCase().trim().split(/\s+/).join('-');
+}
+var winterComing = urlSlug(globalTitle);
+console.log(winterComing);//winter-is-coming
