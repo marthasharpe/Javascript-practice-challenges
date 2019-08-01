@@ -761,21 +761,24 @@ nonMutatingSort = (arr) => {
 console.log(nonMutatingSort(globalArray));//[2, 3, 5, 6, 9]
 
 //use .split with regex
-splitify = (str) => {
-  return str.split(/\W/);
-}
+splitify = (str) => str.split(/\W/);
 console.log(splitify("Hello World,I-am code"));//["Hello", "World", "I", "am", "code"]
 
 //use .join to create a sentence
-sentensify = (str) => {
- return str.split(/\W/).join(' ');
-}
+sentensify = (str) => str.split(/\W/).join(' ');
 console.log(sentensify("May-the-force-be-with-you"));//May the force be with you
 
 //make a title into url format
 var globalTitle = " Winter Is  Coming";
-urlSlug = (title) => {
-  return title.toLowerCase().trim().split(/\s+/).join('-');
-}
+urlSlug = (title) => title.toLowerCase().trim().split(/\s+/).join('-');
 var winterComing = urlSlug(globalTitle);
 console.log(winterComing);//winter-is-coming
+
+//use .every to see if every element meets a criteria
+checkPositive = (arr) => arr.every(num => num > 0);
+console.log(checkPositive([1, 2, 3, -4, 5]));//false
+
+//use .some to see if any element meets a criteria
+checkPositive = (arr) => arr.some(num => num > 0);
+console.log(checkPositive([1, 2, 3, -4, 5]));//false
+
