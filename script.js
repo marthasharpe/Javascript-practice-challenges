@@ -648,6 +648,7 @@ var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The El
 
 console.log(bookList);
 
+//.map
 var watchList = [
   {  
     "Title": "Inception",
@@ -684,5 +685,14 @@ var watchList = [
 ];
 
 let rating = watchList.map((movie) => ({"title":movie["Title"], "rating":movie["imdbRating"]}))
+console.log(rating);
 
-console.log(rating); 
+//make .forEach behave like .map
+var s = [23, 65, 98, 5];
+Array.prototype.myMap = (callback) => {
+  var newArray = [];
+  s.forEach(input => newArray.push(callback(input)));
+  return newArray;
+}
+var new_s = s.myMap(item => item * 2);
+console.log(new_s);
