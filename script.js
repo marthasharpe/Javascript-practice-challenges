@@ -624,7 +624,7 @@ let motionModule = (function () {
 
 
 //Functional Programming
-console.clear();
+
 
 var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
@@ -653,49 +653,25 @@ var watchList = [
     "Title": "Inception",
     "Year": "2010",
     "Rated": "PG-13",
-    "Released": "16 Jul 2010",
-    "Runtime": "148 min",
-    "Genre": "Action, Adventure, Crime",
     "Director": "Christopher Nolan",
     "Writer": "Christopher Nolan",
-    "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
     "imdbRating": "8.8",
-    "imdbVotes": "1,446,708",
-    "imdbID": "tt1375666",
-    "Type": "movie",
-    "Response": "True"
   },
   {  
     "Title": "Interstellar",
     "Year": "2014",
     "Rated": "PG-13",
-    "Released": "07 Nov 2014",
-    "Runtime": "169 min",
-    "Genre": "Adventure, Drama, Sci-Fi",
     "Director": "Christopher Nolan",
     "Writer": "Jonathan Nolan, Christopher Nolan",
-    "Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
     "imdbRating": "8.6",
-    "imdbVotes": "910,366",
-    "imdbID": "tt0816692",
-    "Type": "movie",
-    "Response": "True"
   },
   {
     "Title": "Avatar",
     "Year": "2009",
     "Rated": "PG-13",
-    "Released": "18 Dec 2009",
-    "Runtime": "162 min",
-    "Genre": "Action, Adventure, Fantasy",
     "Director": "James Cameron",
     "Writer": "James Cameron",
-    "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
     "imdbRating": "7.9",
-    "imdbVotes": "876,575",
-    "imdbID": "tt0499549",
-    "Type": "movie",
-    "Response": "True"
   }
 ];
 
@@ -782,3 +758,19 @@ console.log(checkPositive([1, 2, 3, -4, 5]));//false
 checkPositive = (arr) => arr.some(num => num > 0);
 console.log(checkPositive([1, 2, 3, -4, 5]));//false
 
+
+//Intermediate Algorithm Scripting
+console.clear()
+
+//Find the sum of all the numbers in-between two given numbers
+sumAll = (arr) => {
+let sorted = arr.sort((a, b) => a - b);
+let first = sorted[0];
+let last = sorted[1];
+let sum = 0;
+for (i = first; i <= last; i++) {
+  sum += i;
+}
+return sum;
+}
+console.log(sumAll([1, 4]));//10
