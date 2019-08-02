@@ -768,7 +768,7 @@ let sorted = arr.sort((a, b) => a - b);
 let first = sorted[0];//or Math.min(...arr)
 let last = sorted[1];//or Math.max(...arr)
 let sum = 0;
-for (i = first; i <= last; i++) {
+for (let i = first; i <= last; i++) {
   sum += i;
 }
 return sum;
@@ -783,4 +783,13 @@ diffArray = (arr1, arr2) => {
   newArr = firstArr.concat(secondArr);
   return newArr;
 }
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));//[4]
+
+//use arguments function
+function destroyer(arr) {
+  let args = [...arguments];//convert arguments into true array
+  args.splice(0, 1);//args = [2, 3]
+  let remainingValues = arr.filter(value => args.indexOf(value) === -1);
+  return remainingValues;
+}
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));//[1, 1]
