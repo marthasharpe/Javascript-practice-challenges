@@ -765,8 +765,8 @@ console.clear()
 //Find the sum of all the numbers in-between two given numbers
 sumAll = (arr) => {
 let sorted = arr.sort((a, b) => a - b);
-let first = sorted[0];
-let last = sorted[1];
+let first = sorted[0];//or Math.min(...arr)
+let last = sorted[1];//or Math.max(...arr)
 let sum = 0;
 for (i = first; i <= last; i++) {
   sum += i;
@@ -774,3 +774,13 @@ for (i = first; i <= last; i++) {
 return sum;
 }
 console.log(sumAll([1, 4]));//10
+
+//return elements in two arrays that don't repeat
+diffArray = (arr1, arr2) => {
+  var newArr = [];
+  let firstArr = arr1.filter(num => !arr2.includes(num));
+  let secondArr = arr2.filter(num => !arr1.includes(num));
+  newArr = firstArr.concat(secondArr);
+  return newArr;
+}
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
