@@ -793,3 +793,16 @@ function destroyer(arr) {
   return remainingValues;
 }
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));//[1, 1]
+
+//use Object.keys to filter objects
+function whatIsInAName(collection, source) {
+  var arr = [];
+  let sourceKey = Object.keys(source);
+  arr = collection.filter(collectionItem => {
+    return sourceKey.every(objectKey => {
+      return collectionItem[objectKey] === source[objectKey];
+  })
+})
+  return arr;
+}
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
