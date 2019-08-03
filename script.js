@@ -809,7 +809,6 @@ console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercu
 
 //convert to spinal case, all lowercase with hyphens
 function spinalCase(str) {
-  return str.toLowerCase().replace(/\s/g, '-');
+  return str.replace(/([a-z])([A-Z])|\s+|_+/g, '$1-$2').toLowerCase();
 }
-
 console.log(spinalCase('This Is Spinal Tap'));
