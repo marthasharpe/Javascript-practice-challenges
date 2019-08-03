@@ -808,7 +808,16 @@ function whatIsInAName(collection, source) {
 console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
 
 //convert to spinal case, all lowercase with hyphens
-function spinalCase(str) {
-  return str.replace(/([a-z])([A-Z])|\s+|_+/g, '$1-$2').toLowerCase();
-}
+spinalCase = (str) => str.replace(/([a-z])([A-Z])|\s+|_+/g, '$1-$2').toLowerCase();
 console.log(spinalCase('This Is Spinal Tap'));
+
+//Translate string into Pig Latin
+translatePigLatin = (str) => {
+let letter = str.slice(0, 1);
+console.log(str)
+console.log(letter)
+  // if (str[0] !== /aeiou/){
+  //   let letter = str.slice(0, 1);
+  // }
+}
+console.log(translatePigLatin("consonant"));
