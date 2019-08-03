@@ -806,3 +806,10 @@ function whatIsInAName(collection, source) {
   return arr;
 }
 console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+
+//convert to spinal case, all lowercase with hyphens
+function spinalCase(str) {
+  return str.toLowerCase().replace(/\s/g, '-');
+}
+
+console.log(spinalCase('This Is Spinal Tap'));
