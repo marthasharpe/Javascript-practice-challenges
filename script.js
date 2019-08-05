@@ -824,3 +824,10 @@ translatePigLatin = (str) => {
   }
 }
 console.log(translatePigLatin("california"));
+
+//search and replace a word in a sentence
+function myReplace(str, before, after) {
+  let regFunc = new RegExp(before); //RegExp class constructor
+  return str.replace(regFunc, after);
+}
+console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
