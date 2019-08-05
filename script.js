@@ -813,11 +813,14 @@ console.log(spinalCase('This Is Spinal Tap'));
 
 //Translate string into Pig Latin
 translatePigLatin = (str) => {
-let letter = str.slice(0, 1);
-console.log(str)
-console.log(letter)
-  // if (str[0] !== /aeiou/){
-  //   let letter = str.slice(0, 1);
-  // }
+  // use str.replace(replaceThis, withThis);
+  let startVowel = /^[aeiou]/
+  if (startVowel.test(str)) {  //if beginning of str is a vowel, add "way" to the end of str 
+    return `${str}way`;
+  } else if (str.match(/[aeiou]/g) === null) { //if there are no vowels in str
+    return `${str}ay`;
+  } else {  //if it's not a vowel, then add the starting consonants and "ay" to the end
+    return str.replace(/^([^aeiouy]+)(.*)/, '$2$1ay')
+  }
 }
-console.log(translatePigLatin("consonant"));
+console.log(translatePigLatin("california"));
