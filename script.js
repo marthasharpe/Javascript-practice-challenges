@@ -827,6 +827,9 @@ console.log(translatePigLatin("california"));
 
 //search and replace a word in a sentence
 function myReplace(str, before, after) {
+  if (before[0] === before[0].toUpperCase()){
+    after = after[0].toUpperCase() + after.slice(1);
+  }
   let regFunc = new RegExp(before); //RegExp class constructor
   return str.replace(regFunc, after);
 }
