@@ -860,3 +860,18 @@ pairElement = (str) => {
     return miniArray;
 }
 console.log(pairElement("ATGCG"));
+
+//return the missing letter in a given range
+//.charCodeAt() returns the integer value of a given character in UTF-16 code
+//String.fromCharCode() returns the character string of a given UTF-16 code
+fearNotLetter = (str) => {
+  let strCode = str.charCodeAt();
+  for (let i = 0; i < str.length; i++) {
+    if (str.charCodeAt(i) !== strCode) {
+      return String.fromCharCode(strCode);
+    } else {
+      strCode++;
+    }
+  }
+}
+console.log(fearNotLetter("abcde"));
