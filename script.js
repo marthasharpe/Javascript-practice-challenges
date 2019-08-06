@@ -905,10 +905,13 @@ console.log(convertHTML("Hamburgers < Pizza < Tacos"));
 //.filter that array for the odd numbers
 //.reduce the array to find the sum
 function sumFibs(num) {
-  let fib = [0, 1];
-  for (let i = 2; i <= num; i++) {
-    fib[i] = fib[i-1] + fib[i-2];
+  let fib = [1, 1];
+  const findNextNum = (a, b) => a + b;
+  let nextNum = findNextNum(1, 1);
+  while (nextNum <= num) {
+    fib.push(nextNum);
+    nextNum = findNextNum(fib[fib.length-1], fib[fib.length-2]);
   }
-  return fib;
+  return fib.filter(number => number % 2 === 1).reduce((a, b) => a + b);
 }
-console.log(sumFibs(4));
+console.log(sumFibs(1000));
