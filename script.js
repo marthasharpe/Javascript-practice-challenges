@@ -874,4 +874,19 @@ fearNotLetter = (str) => {
     }
   }
 }
-console.log(fearNotLetter("abcde"));
+console.log(fearNotLetter("abce"));//d
+
+//unite arrays into a single array with no repeating numbers in their original order
+function uniteUnique(arr) {
+  let uniqueArr = [];
+  let args = [...arguments];
+  for (let i = 0; i < args.length; i++) {
+    for (let j = 0; j < args[i].length; j++) {
+      if (!uniqueArr.includes(args[i][j])) {
+        uniqueArr.push(args[i][j]);
+      }
+    }
+  }
+  return uniqueArr;
+}
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));//[1, 3, 2, 5, 4]
