@@ -834,3 +834,29 @@ function myReplace(str, before, after) {
   return str.replace(regFunc, after);
 }
 console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
+
+//DNA pairing
+pairElement = (str) => {
+  let splitArray = str.split("");
+  let miniArray = [];
+  let pair = '';
+  splitArray.map(letter => {
+    switch(letter) {
+      case 'A':
+        pair = 'T';
+        break;
+      case 'T':
+        pair = 'A';
+        break;
+      case 'G':
+        pair = 'C';
+        break;
+      case 'C':
+        pair = 'G';
+        break;  
+    }
+      miniArray.push([letter, pair]);
+  });
+    return miniArray;
+}
+console.log(pairElement("ATGCG"));
