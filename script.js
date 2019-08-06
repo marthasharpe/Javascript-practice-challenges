@@ -900,3 +900,15 @@ function convertHTML(str) {
           .replace(/"/g, '&​quot;');
 }
 console.log(convertHTML("Hamburgers < Pizza < Tacos"));
+
+//create an array of Fibonacci numbers less than num
+//.filter that array for the odd numbers
+//.reduce the array to find the sum
+function sumFibs(num) {
+  let fib = [0, 1];
+  for (let i = 2; i <= num; i++) {
+    fib[i] = fib[i-1] + fib[i-2];
+  }
+  return fib;
+}
+console.log(sumFibs(4));
