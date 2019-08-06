@@ -904,7 +904,7 @@ console.log(convertHTML("Hamburgers < Pizza < Tacos"));
 //create an array of Fibonacci numbers less than num
 //.filter that array for the odd numbers
 //.reduce the array to find the sum
-function sumFibs(num) {
+sumFibs = (num) => {
   let fib = [1, 1];
   const findNextNum = (a, b) => a + b;
   let nextNum = findNextNum(1, 1);
@@ -915,3 +915,10 @@ function sumFibs(num) {
   return fib.filter(number => number % 2 === 1).reduce((a, b) => a + b);
 }
 console.log(sumFibs(1000));
+
+//Sum all prime numbers
+sumPrimes = (num) => {
+
+  return num;
+}
+console.log(sumPrimes(10));
