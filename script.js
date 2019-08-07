@@ -893,11 +893,12 @@ console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));//[1, 3, 2, 5, 4]
 
 //Convert to HTML entities
 function convertHTML(str) {
-  return str.replace(/&/g, '&amp;')
-          .replace(/</g, '&​lt;')
-          .replace(/>/g, '&​gt;')
-          .replace(/'/g, '&​apos;')
-          .replace(/"/g, '&​quot;');
+  str = str.replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/'/g, '&apos;')
+          .replace(/"/g, '&quot;');
+return str;
 }
 console.log(convertHTML("Hamburgers < Pizza < Tacos"));
 
