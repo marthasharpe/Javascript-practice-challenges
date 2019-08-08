@@ -945,10 +945,8 @@ function smallestCommons(arr) {
   for (let i = arr[0]; i >= arr[1]; i--) {
     fullArray.push(i);
   }
-  
   let lcm = fullArray[0];
   const gcd = (x, y) => y === 0 ? x : gcd(y, x % y);
-
   for (let i = 1; i < fullArray.length; i++) {
     let GCD = gcd(lcm, fullArray[i]);
     lcm = (lcm * fullArray[i]) /GCD;
@@ -957,3 +955,15 @@ function smallestCommons(arr) {
 }
 console.log(smallestCommons([5,1]));
 
+//.find returns the value of the first element that satisfies condition or undefined if none pass
+//.findIndex returns the first element's index or -1 if none pass
+function dropElements(arr, func) {
+  let lastArr = [];
+  let firstNum = arr.findIndex(func);
+  if (firstNum === -1) {
+    return lastArr;
+  } else {
+    return arr.slice(firstNum);
+  }
+}
+console.log(dropElements([1, 2, 3], function(n) {return n < 4; }));
