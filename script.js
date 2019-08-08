@@ -939,15 +939,21 @@ return primeSum;
 console.log(sumPrimes(10));//17
 
 //Find the smallest common multiple shared by numbers in a range
-// function smallestCommons(arr) {
-//   let fullArray = [];
-//   for (let i = arr[0]; i <= arr[1]; i++) {
-//     fullArray.push(i);
-//   }
-//   fullArray.sort((a, b) => b - a);
+function smallestCommons(arr) {
+  arr.sort((a, b) => b - a);
+  let fullArray = [];
+  for (let i = arr[0]; i >= arr[1]; i--) {
+    fullArray.push(i);
+  }
   
+  let lcm = fullArray[0];
+  const gcd = (x, y) => y === 0 ? x : gcd(y, x % y);
 
-// }
-
-// console.log(smallestCommons([1,5]));
+  for (let i = 1; i < fullArray.length; i++) {
+    let GCD = gcd(lcm, fullArray[i]);
+    lcm = (lcm * fullArray[i]) /GCD;
+   }
+  return lcm;
+}
+console.log(smallestCommons([5,1]));
 
