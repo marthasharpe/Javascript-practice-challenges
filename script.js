@@ -967,3 +967,18 @@ function dropElements(arr, func) {
   }
 }
 console.log(dropElements([1, 2, 3], function(n) {return n < 4; }));
+
+//flatten a multi-dimensional array into a single-dimension
+function steamrollArray(arr) {
+  let flatArray = [];
+  const flatten = (elem) => {
+    if (!Array.isArray(elem)) {
+      flatArray.push(elem);
+    } else {
+      elem.forEach(flatten);
+    }
+  }
+  arr.forEach(flatten);
+  return flatArray;
+}
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
