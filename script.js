@@ -936,4 +936,18 @@ sumPrimes = (num) => {
 let primeSum = primeArray.reduce((a, b) => a + b);
 return primeSum;
 }
-console.log(sumPrimes(10));
+console.log(sumPrimes(10));//17
+
+//Find the smallest common multiple shared by numbers in a range
+// function smallestCommons(arr) {
+//   let fullArray = [];
+//   for (let i = arr[0]; i <= arr[1]; i++) {
+//     fullArray.push(i);
+//   }
+//   fullArray.sort((a, b) => b - a);
+  
+
+// }
+
+// console.log(smallestCommons([1,5]));
+
