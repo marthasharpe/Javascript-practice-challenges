@@ -994,10 +994,34 @@
 // }
 // console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
 
-//check if all objects have truthy values using Boolean function
-function truthCheck(collection, pre) {
-  return collection.every(object => object.hasOwnProperty(pre) && Boolean(object[pre]));
+// //check if all objects have truthy values using Boolean function
+// function truthCheck(collection, pre) {
+//   return collection.every(object => object.hasOwnProperty(pre) && Boolean(object[pre]));
+// }
+// console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": null}], "sex"));
+
+//Find the sum of an unspecified number of arguments
+function addTogether() {
+const isNum = (arg) => typeof arg !== "number" ? undefined : arg;
+if (arguments.length > 1) {
+  let a = isNum(arguments[0]);
+  let b = isNum(arguments[1]);
+  if (a === undefined || b === undefined) {
+    return undefined;
+  } else {
+    return a + b;
+  }
+} else {
+  let c = arguments[0];
+  if (isNum(c)) {
+    return function(arg2) {
+      if (c === undefined || isNum(arg2) === undefined) {
+        return undefined
+      } else {
+        return c + arg2;
+      }
+    }
+  }
 }
-console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": null}], "sex"));
-
-
+}
+console.log(addTogether(2));
