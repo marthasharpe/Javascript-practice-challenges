@@ -983,12 +983,20 @@
 // }
 // console.log(steamrollArray([1, [2], [3, [[4]]]]));//[1, 2, 3, 4]
 
-function binaryAgent(str) {
-  let binaryArray = str.split(' ');
-  let wordArray = [];
-  binaryArray.forEach(element => {
-     wordArray.push(String.fromCharCode(parseInt(element, 2)));
-  });
-  return wordArray.join('');
+// //Convert binary into English
+// function binaryAgent(str) {
+//   let binaryArray = str.split(' ');
+//   let wordArray = [];
+//   binaryArray.forEach(element => {
+//      wordArray.push(String.fromCharCode(parseInt(element, 2)));
+//   });
+//   return wordArray.join('');
+// }
+// console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+
+//check if all objects have a given property
+function truthCheck(collection, pre) {
+  
+  return pre;
 }
-console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
