@@ -919,7 +919,21 @@ console.log(sumFibs(1000));
 
 //Sum all prime numbers
 sumPrimes = (num) => {
-
-  return num;
+  let primeArray = [2];
+  const isPrime = (n) => {
+    for (let i = 2; i < n; i++) {
+      if ( n % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  for (let i = 3; i <= num; i += 2) {
+    if (isPrime(i)) {
+      primeArray.push(i);
+    }
+  }
+let primeSum = primeArray.reduce((a, b) => a + b);
+return primeSum;
 }
 console.log(sumPrimes(10));
