@@ -1000,28 +1000,57 @@
 // }
 // console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": null}], "sex"));
 
-//Find the sum of an unspecified number of arguments
-function addTogether() {
-const isNum = (arg) => typeof arg !== "number" ? undefined : arg;
-if (arguments.length > 1) {
-  let a = isNum(arguments[0]);
-  let b = isNum(arguments[1]);
-  if (a === undefined || b === undefined) {
-    return undefined;
-  } else {
-    return a + b;
+// //Find the sum of an unspecified number of arguments
+// function addTogether() {
+// const isNum = (arg) => typeof arg !== "number" ? undefined : arg;
+// if (arguments.length > 1) {
+//   let a = isNum(arguments[0]);
+//   let b = isNum(arguments[1]);
+//   if (a === undefined || b === undefined) {
+//     return undefined;
+//   } else {
+//     return a + b;
+//   }
+// } else {
+//   let c = arguments[0];
+//   if (isNum(c)) {
+//     return function(arg2) {
+//       if (c === undefined || isNum(arg2) === undefined) {
+//         return undefined
+//       } else {
+//         return c + arg2;
+//       }
+//     }
+//   }
+// }
+// }
+// console.log(addTogether(2));
+
+//Create a person object with setters and getters
+const Person = function(firstAndLast) {
+  let fullName = firstAndLast.split(' ');
+
+  this.setFullName = (newFull) => {
+    fullName = newFull.split(' ');
+    return fullName;
   }
-} else {
-  let c = arguments[0];
-  if (isNum(c)) {
-    return function(arg2) {
-      if (c === undefined || isNum(arg2) === undefined) {
-        return undefined
-      } else {
-        return c + arg2;
-      }
-    }
+  this.setFirstName = (newFirst) => {
+    fullName[0] = newFirst;
+    return newFirst;
+  }
+  this.setLastName = (newLast) => {
+    fullName[1] = newLast;
+    return newLast;
+  }
+  this.getFullName = () => {
+    return fullName.join(' ');
+  }
+  this.getFirstName = () => {
+    return fullName[0];
+  }
+  this.getLastName = () => {
+    return fullName[1];
   }
 }
-}
-console.log(addTogether(2));
+let bob = new Person('Bob Ross');
+console.log(bob.getFullName());
