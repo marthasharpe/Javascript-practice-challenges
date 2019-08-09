@@ -1026,31 +1026,39 @@
 // }
 // console.log(addTogether(2));
 
-//Create a person object with setters and getters
-const Person = function(firstAndLast) {
-  let fullName = firstAndLast.split(' ');
+// //Create a person object with setters and getters
+// const Person = function(firstAndLast) {
+//   let fullName = firstAndLast.split(' ');
 
-  this.setFullName = (newFull) => {
-    fullName = newFull.split(' ');
-    return fullName;
-  }
-  this.setFirstName = (newFirst) => {
-    fullName[0] = newFirst;
-    return newFirst;
-  }
-  this.setLastName = (newLast) => {
-    fullName[1] = newLast;
-    return newLast;
-  }
-  this.getFullName = () => {
-    return fullName.join(' ');
-  }
-  this.getFirstName = () => {
-    return fullName[0];
-  }
-  this.getLastName = () => {
-    return fullName[1];
-  }
+//   this.setFullName = (newFull) => {
+//     fullName = newFull.split(' ');
+//     return fullName;
+//   }
+//   this.setFirstName = (newFirst) => {
+//     fullName[0] = newFirst;
+//     return newFirst;
+//   }
+//   this.setLastName = (newLast) => {
+//     fullName[1] = newLast;
+//     return newLast;
+//   }
+//   this.getFullName = () => {
+//     return fullName.join(' ');
+//   }
+//   this.getFirstName = () => {
+//     return fullName[0];
+//   }
+//   this.getLastName = () => {
+//     return fullName[1];
+//   }
+// }
+// let bob = new Person('Bob Ross');
+// console.log(bob.getFullName());
+
+//
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  return arr;
 }
-let bob = new Person('Bob Ross');
-console.log(bob.getFullName());
+console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
