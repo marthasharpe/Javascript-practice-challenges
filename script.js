@@ -1055,10 +1055,19 @@
 // let bob = new Person('Bob Ross');
 // console.log(bob.getFullName());
 
-//
+//Replace object key/value with new property using a conversion formula 
 function orbitalPeriod(arr) {
-  var GM = 398600.4418;
-  var earthRadius = 6367.4447;
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  const findOrbitalPeriod = (avgAltValue) => {
+    let axis = earthRadius + avgAltValue;
+    let orbitalPeriodValue = Math.round(2 * Math.PI * Math.sqrt(Math.pow(axis, 3)/GM));
+    return orbitalPeriodValue;
+  }
+  for (let i=0; i<arr.length; i++) {
+    arr[i].orbitalPeriod = findOrbitalPeriod(arr[i].avgAlt);
+    delete arr[i].avgAlt;
+  }
   return arr;
 }
 console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
