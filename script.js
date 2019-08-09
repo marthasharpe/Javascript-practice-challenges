@@ -1076,13 +1076,22 @@
 //JavaScript Projects//
 
 
-//Palindrome Checker
-//see if the given string is the same in reverse without any special characters, spaces, or capital letters
-function palindrome(str) {
-  let strippedStr = str.replace(/[\W\s|_]/ig, '').toLowerCase();
-  let reversedStr = strippedStr.split('').reverse().join('');
-  console.log(strippedStr);
-  console.log(reversedStr);
-  return strippedStr === reversedStr ? true : false;
+// //Palindrome Checker
+// //see if the given string is the same in reverse without any special characters, spaces, or capital letters
+// function palindrome(str) {
+//   let strippedStr = str.replace(/[\W\s|_]/ig, '').toLowerCase();
+//   let reversedStr = strippedStr.split('').reverse().join('');
+//   console.log(strippedStr);
+//   console.log(reversedStr);
+//   return strippedStr === reversedStr ? true : false;
+// }
+// console.log(palindrome(" Cye_Eye!"));
+
+//Roman Numeral Converter
+function convertToRoman(num) {
+  let romanNum = "";
+  const romanNumerals = { 'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1, }
+  
+  return romanNum; 
 }
-console.log(palindrome(" Cye_Eye!"));
+ console.log(convertToRoman(21));
