@@ -1055,19 +1055,34 @@
 // let bob = new Person('Bob Ross');
 // console.log(bob.getFullName());
 
-//Replace object key/value with new property using a conversion formula 
-function orbitalPeriod(arr) {
-  const GM = 398600.4418;
-  const earthRadius = 6367.4447;
-  const findOrbitalPeriod = (avgAltValue) => {
-    let axis = earthRadius + avgAltValue;
-    let orbitalPeriodValue = Math.round(2 * Math.PI * Math.sqrt(Math.pow(axis, 3)/GM));
-    return orbitalPeriodValue;
-  }
-  for (let i=0; i<arr.length; i++) {
-    arr[i].orbitalPeriod = findOrbitalPeriod(arr[i].avgAlt);
-    delete arr[i].avgAlt;
-  }
-  return arr;
+// //Replace object key/value with new property using a conversion formula 
+// function orbitalPeriod(arr) {
+//   const GM = 398600.4418;
+//   const earthRadius = 6367.4447;
+//   const findOrbitalPeriod = (avgAltValue) => {
+//     let axis = earthRadius + avgAltValue;
+//     let orbitalPeriodValue = Math.round(2 * Math.PI * Math.sqrt(Math.pow(axis, 3)/GM));
+//     return orbitalPeriodValue;
+//   }
+//   for (let i=0; i<arr.length; i++) {
+//     arr[i].orbitalPeriod = findOrbitalPeriod(arr[i].avgAlt);
+//     delete arr[i].avgAlt;
+//   }
+//   return arr;
+// }
+// console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
+
+
+//JavaScript Projects//
+
+
+//Palindrome Checker
+//see if the given string is the same in reverse without any special characters, spaces, or capital letters
+function palindrome(str) {
+  let strippedStr = str.replace(/[\W\s|_]/ig, '').toLowerCase();
+  let reversedStr = strippedStr.split('').reverse().join('');
+  console.log(strippedStr);
+  console.log(reversedStr);
+  return strippedStr === reversedStr ? true : false;
 }
-console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
+console.log(palindrome(" Cye_Eye!"));
