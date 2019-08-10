@@ -1101,19 +1101,32 @@
 // }
 //  console.log(convertToRoman(891));
 
-//Caesars Cipher
-//translate the given string using the ROT13 cipher, which slides each letter back 13 places
-//ASCII A-Z === 65-90
-function rot13(str) {
-  let newStr = "";
-  newStr = str.replace(/[A-Z]/g, (x) => {
-    let newCode = x.charCodeAt(0) - 13;
-    if (newCode < 65) {
-      return String.fromCharCode(newCode += 26);
-    } else {
-      return String.fromCharCode(newCode);
-    }
-  });
-  return newStr;
+// //Caesars Cipher
+// //translate the given string using the ROT13 cipher, which slides each letter back 13 places
+// //ASCII A-Z === 65-90
+// function rot13(str) {
+//   let newStr = "";
+//   newStr = str.replace(/[A-Z]/g, (x) => {
+//     let newCode = x.charCodeAt(0) - 13;
+//     if (newCode < 65) {
+//       return String.fromCharCode(newCode += 26);
+//     } else {
+//       return String.fromCharCode(newCode);
+//     }
+//   });
+//   return newStr;
+// }
+// console.log(rot13("SERR PBQR PNZC!"));
+
+//Telephone Number Validator
+//Valid formats included:
+// 555-555-5555
+// (555)555-5555
+// (555) 555-5555
+// 555 555 5555
+// 5555555555
+// 1 555 555 5555
+function telephoneCheck(str) {
+  
 }
-console.log(rot13("SERR PBQR PNZC!"));
+console.log(telephoneCheck("555-555-5555"));
