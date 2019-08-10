@@ -1087,16 +1087,23 @@
 // }
 // console.log(palindrome(" Cye_Eye!"));
 
-//Roman Numeral Converter
-function convertToRoman(num) {
-  let romanNum = "";
-  const romanNumerals = { 'M':1000, 'CM':900, 'D':500, 'CD':400, 'C':100, 'XC':90, 'L':50, 'XL':40, 'X':10, 'IX':9, 'V':5, 'IV':4, 'I':1 }
-  for (let i in romanNumerals){
-    while (num >= romanNumerals[i]) {
-      romanNum += i;
-      num -= romanNumerals[i];
-    }
-  }
-  return romanNum;
+// //Roman Numeral Converter
+// function convertToRoman(num) {
+//   let romanNum = "";
+//   const romanNumerals = { 'M':1000, 'CM':900, 'D':500, 'CD':400, 'C':100, 'XC':90, 'L':50, 'XL':40, 'X':10, 'IX':9, 'V':5, 'IV':4, 'I':1 }
+//   for (let i in romanNumerals){
+//     while (num >= romanNumerals[i]) {
+//       romanNum += i;
+//       num -= romanNumerals[i];
+//     }
+//   }
+//   return romanNum;
+// }
+//  console.log(convertToRoman(891));
+
+//Caesars Cipher
+//translate the given string using the ROT13 cipher
+function rot13(str) {
+  return String.fromCharCode(str.charCodeAt(0) - 13);
 }
- console.log(convertToRoman(891));
+console.log(rot13("SERR PBQR PNZC"));
