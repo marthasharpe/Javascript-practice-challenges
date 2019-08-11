@@ -1182,31 +1182,52 @@
 
 checkCashRegister = (price, cash, cid) => {
   let output = { status: "", change: []}
-  
-  let changeDue = cash - price;
-console.log(changeDue);
+  let changeDue = (cash - price).toFixed(2);
+console.log(`ChangeDue: ${changeDue}`);
 
   let cidArr = [];
   for (let i=0; i<cid.length; i++) {
     cidArr.push(cid[i][1]);
   }
-console.log(cidArr);
   let totalCid = cidArr.reduce((a, b) => a + b).toFixed(2);
-console.log(totalCid);
+console.log(`TotalCid: ${totalCid}`);
+
+//change cid into an array of objects with name and value keys
+let cidArray = [];
+for (let i=0; i<cid.length; i++) {
+  let cidObj = {};
+  cidObj.name = cid[i][0];
+  cidObj.value = cid[i][1];
+  cidArray.push(cidObj);
+}
+console.log(cidArray)
 
 const currency = [
   {name: "ONE HUNDRED", value: 100.00},
-  {name: "TWENTY", value: 100.00},
-  {name: "TEN", value: 100.00},
-  {name: "FIVE", value: 100.00},
-  {name: "ONE", value: 100.00},
-  {name: "QUARTER", value: 100.00},
-  {name: "DIME", value: 100.00},
-  {name: "NICKEL", value: 100.00},
-  {name: "PENNY", value: 100.00},
+  {name: "TWENTY", value: 20.00},
+  {name: "TEN", value: 10.00},
+  {name: "FIVE", value: 5.00},
+  {name: "ONE", value: 1.00},
+  {name: "QUARTER", value: 0.25},
+  {name: "DIME", value: 0.10},
+  {name: "NICKEL", value: 0.05},
+  {name: "PENNY", value: 0.01},
 ]
+
 //I need to make change from highest to lowest and assign the array as output.change
-//Below, I'm looping through the values of each currency object as long as there is a remainder
+
+//Loop through the values of each currency object value while there is a remainder
+// let remainder = 0;
+// for (let i=0; i<currency.length; i++) {
+//   if (changeDue >= currency[i].value) {
+//     remainder = changeDue % currency[i].value;
+//   }
+//   console.log(remainder);
+// }
+// if (remainder > 0) {
+//     output.status = "INSUFFICIENT_FUNDS";
+//     output.change = [];
+
 //I need to write a function to makeChange using changeDue as a parameter => {
   //hundreds = changeDue/100, changeLeft = changeDue%100
   //twenties = changeLeft/20, changeLeft = changeLeft%20
@@ -1222,7 +1243,7 @@ const currency = [
 if (changeDue > totalCid) {
     output.status = "INSUFFICIENT_FUNDS";
     output.change = [];
-  } else if (changeDue == totalCid) {
+  } else if (changeDue === totalCid) {
     output.status = "CLOSED";
     output.change = cid;
   } else {
@@ -1232,10 +1253,10 @@ if (changeDue > totalCid) {
 return output;
 }
 
-console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "INSUFFICIENT_FUNDS", change: []}
+// console.log(checkCashRegister(5.99, 10, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "INSUFFICIENT_FUNDS", change: []}
 
-console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "INSUFFICIENT_FUNDS", change: []}
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "INSUFFICIENT_FUNDS", change: []}
 
-console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}
 
-console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));//{status: "OPEN", change: [["QUARTER", 0.5]]}
+console.log(checkCashRegister(19.99, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));//{status: "OPEN", change: [["QUARTER", 0.5]]}
