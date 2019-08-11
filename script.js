@@ -1128,38 +1128,64 @@
 
 //Cash Register
 //price === purchace price, cash === payment, cid === available currency in drawer
-function checkCashRegister(price, cash, cid) {
-  let currency = [
-    { name: 'ONE HUNDRED', value: 100.00},
-    { name: 'TWENTY', value: 20.00},
-    { name: 'TEN', value: 10.00},
-    { name: 'FIVE', value: 5.00},
-    { name: 'ONE', value: 1.00},
-    { name: 'QUARTER', value: 0.25},
-    { name: 'DIME', value: 0.10},
-    { name: 'NICKEL', value: 0.05},
-    { name: 'PENNY', value: 0.01}
-  ];
+// function checkCashRegister(price, cash, cid) {
+//   let currency = [
+//     { name: 'ONE HUNDRED', value: 100.00},
+//     { name: 'TWENTY', value: 20.00},
+//     { name: 'TEN', value: 10.00},
+//     { name: 'FIVE', value: 5.00},
+//     { name: 'ONE', value: 1.00},
+//     { name: 'QUARTER', value: 0.25},
+//     { name: 'DIME', value: 0.10},
+//     { name: 'NICKEL', value: 0.05},
+//     { name: 'PENNY', value: 0.01}
+//   ];
+//   let output = { status: "", change: [] };
+//   let changeDue = cash - price;
 
-  let output = { status: "", change: [] };
-  let changeDue = cash - price;
+//   var register = cid.reduce((acc, curr) => {
+//     acc.total += curr[1];
+//     acc[curr[0]] = curr[1];
+//     return acc;
+//   }, {total: 0});
+
+//   let changeArr = currency.reduce((acc, curr) => {
+//     let changeGiven = 0;
+//     while (register[curr.name] > 0 && changeDue >= curr.value) {
+//       changeDue -= curr.value;
+//       register[curr.name] -= curr.value;
+//       changeGiven += curr.value;
+//       changeGiven = Math.round(changeGiven * 100)/100;
+//       changeDue = Math.round(changeDue * 100)/100;
+//   }
+//     if (changeGiven > 0) {
+//       acc.push([curr.name, changeGiven]);
+//     }
+//     return acc;
+//   }, []);
   
-  let totalCashArr = [];
-  for (let i=0; i<cid.length; i++) {
-    totalCashArr.push(cid[i][1]);
-  }
-  let totalCash = totalCashArr.reduce((a, b) => a + b).toFixed(2);
+//   if (register.total < changeDue || changeArr.length < 1 || changeDue > 0) {
+//     output.status = "INSUFFICIENT_FUNDS";
+//     output.change = [];
+//   } else if (register.total === changeDue) {
+//     output.status = "CLOSED";
+//     output.change = [...cid];
+//   } else {
+//     output.status = "OPEN";
+//     output.change = changeArr;
+//   }
+//   return output;
+// }
 
-  if (totalCash < changeDue || totalCash % changeDue !== 0) {
-    output.status = "INSUFFICIENT_FUNDS";
-    output.change = [];
-  } else if (totalCash === changeDue) {
-    output.status = "CLOSED";
-    output.change = [...cid];
-  } else {
-    output.status = "OPEN";
-    output.change = [changeDue from highest to lowest currency]
-  }
-  return output;
+
+//Cash Register - Try Again - MY WAY!!!
+
+checkCashRegister = (price, cash, cid) => {
+
 }
-console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
+
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "INSUFFICIENT_FUNDS", change: []}
+
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}
+
+console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));//{status: "OPEN", change: [["QUARTER", 0.5]]}
