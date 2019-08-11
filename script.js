@@ -1181,10 +1181,60 @@
 //Cash Register - Try Again - MY WAY!!!
 
 checkCashRegister = (price, cash, cid) => {
+  let output = { status: "", change: []}
+  
+  let changeDue = cash - price;
+console.log(changeDue);
 
+  let cidArr = [];
+  for (let i=0; i<cid.length; i++) {
+    cidArr.push(cid[i][1]);
+  }
+console.log(cidArr);
+  let totalCid = cidArr.reduce((a, b) => a + b).toFixed(2);
+console.log(totalCid);
+
+const currency = [
+  {name: "ONE HUNDRED", value: 100.00},
+  {name: "TWENTY", value: 100.00},
+  {name: "TEN", value: 100.00},
+  {name: "FIVE", value: 100.00},
+  {name: "ONE", value: 100.00},
+  {name: "QUARTER", value: 100.00},
+  {name: "DIME", value: 100.00},
+  {name: "NICKEL", value: 100.00},
+  {name: "PENNY", value: 100.00},
+]
+//I need to make change from highest to lowest and assign the array as output.change
+//Below, I'm looping through the values of each currency object as long as there is a remainder
+//I need to write a function to makeChange using changeDue as a parameter => {
+  //hundreds = changeDue/100, changeLeft = changeDue%100
+  //twenties = changeLeft/20, changeLeft = changeLeft%20
+  //tens = changeLeft/10, changeLeft = changeLeft%10
+  //fives = changeLeft/5, changeLeft = changeLeft%5
+  //ones = changeLeft/1, changeLeft = changeLeft%1
+  //quarters = changeLeft/0.25, changeLeft = changeLeft%0.25
+  //dimes = changeLeft/0.1, changeLeft = changeLeft%0.1
+  //nickels = changeLeft/0.05, changeLeft = changeLeft%0.05
+  //pennies = changeLeft/0.01, changeLeft = changeLeft%0.01
+//}
+  
+if (changeDue > totalCid) {
+    output.status = "INSUFFICIENT_FUNDS";
+    output.change = [];
+  } else if (changeDue == totalCid) {
+    output.status = "CLOSED";
+    output.change = cid;
+  } else {
+    output.status = "OPEN";
+    output.change = [];
+  }
+return output;
 }
 
 console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "INSUFFICIENT_FUNDS", change: []}
+
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "INSUFFICIENT_FUNDS", change: []}
 
 console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));//{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}
 
