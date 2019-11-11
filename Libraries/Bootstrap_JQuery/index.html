@@ -1,102 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bootstrap Practice</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- link to bootstrap styling -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <!-- link to Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("button").addClass("btn-primary");
-            $(".btn").removeClass("btn-default");
-            $("#target1").css("color", "black");
-            $("#target1").prop("disabled", true);
-            $("#target2").html("<em>#target4</em>");
-            $("#target3").text("#T3!");
-            $("#target4").remove();
-            $("#target2").appendTo("#right-well");
-            $("#target5").clone().appendTo("#left-well");
-            $("#target1").parent().css("background-color", "yellow");
-            $("#right-well").children().css("color", "orange");
-            $(".target:nth-child(2)").addClass("btn-danger");
-            $(".target:even").text("EvenTarget");
-        });
-    </script>
-</head>
-<body>
-    <div class="container-fluid">
-        <!-- <h1 class="text-center text-danger">Bootstrap Practice</h1> -->
-        <!-- <div class="row">
-            <div class="col-xs-4">
-                <img src="./adventure awaits crop.png" class="image-responsive"/>
-            </div>
-        </div> -->
-        <!-- <h2 class="text-primary">The road goes ever on and on...</h2>
-        <button class="btn btn-default btn-block">Default & Block</button>
-        <div class="row">
-            <div class="col-xs-4">
-                <button class="btn btn-primary"><i class="fa fa-thumbs-up"></i>Primary</button>
-            </div>
-            <div class="col-xs-4">
-                <button class="btn btn-info"><i class="fa fa-info-circle"></i>Info</button>
-            </div>
-            <div class="col-xs-4">
-                <button class="btn btn-danger"><i class="fa fa-trash"></i>Danger</button>
-            </div>
-        </div>
-        <form action="/submit-options">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bootstrap Practice</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- link to bootstrap styling -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <!-- link to Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <!-- JQuery calls -->
+        <script>
+            $(document).ready(function() {
+                $("button").addClass("btn-primary");
+                $(".btn").removeClass("btn-default");
+                $("#target1").css("color", "black");
+                $("#target1").prop("disabled", true);
+                $("#target2").html("<em>#target4</em>");
+                $("#target3").text("#T3!");
+                $("#target4").remove();
+                $("#target2").appendTo("#right-well");
+                $("#target5").clone().appendTo("#left-well");
+                $("#target1").parent().css("background-color", "yellow");
+                $("#right-well").children().css("color", "orange");
+                $(".target:nth-child(2)").addClass("btn-danger");
+                $(".target:even").text("EvenTarget");
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+
+            <h1 class="text-center text-danger">Bootstrap Practice</h1>
             <div class="row">
-              <div class="col-xs-6">
-                <label><input type="radio" name="radio-input">Radio</label>
-              </div>
-              <div class="col-xs-6">
-                <label><input type="radio" name="radio-input">Input</label>
+                <div class="col-4">
+                    <img src="./adventure awaits crop.png" class="image-fluid"/>
                 </div>
             </div>
+            <h2 class="text-primary">The road goes ever on and on...</h2>
+            <button class="btn btn-default btn-block">Default & Block</button>
             <div class="row">
-              <div class="col-xs-4">
-                <label><input type="checkbox" name="options"> Option 1</label>
-              </div>
-              <div class="col-xs-4">
-                <label><input type="checkbox" name="options"> Option 2</label>
-              </div>
-              <div class="col-xs-4">
-                <label><input type="checkbox" name="options"> Option 3</label>
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <input class="form-control" type="text" placeholder="text here" required>
+                <div class="col-xs-4">
+                    <button class="btn btn-primary"><i class="fa fa-thumbs-up"></i>Primary</button>
                 </div>
                 <div class="col-xs-4">
-                    <button class="btn btn-default" type="submit"><i class="fa fa-paper-plane"></i>Submit</button>
+                    <button class="btn btn-info"><i class="fa fa-info-circle"></i>Info</button>
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn btn-danger"><i class="fa fa-trash"></i>Danger</button>
                 </div>
             </div>
-          </form> -->
-        <h3 class="text-primary text-center">jQuery Playground</h3>
-        <div class="row">
-            <div class="col-xs-6">
-            <h4>#left-well</h4>
-            <div class="well" id="left-well">
-                <button class="btn btn-default target" id="target1">#target1</button>
-                <button class="btn btn-default target" id="target2">#target2</button>
-                <button class="btn btn-default target" id="target3">#target3</button>
+            
+            <form action="/submit-options">
+                <div class="row">
+                <div class="col-xs-6">
+                    <label><input type="radio" name="radio-input">Radio</label>
+                </div>
+                <div class="col-xs-6">
+                    <label><input type="radio" name="radio-input">Input</label>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-xs-4">
+                    <label><input type="checkbox" name="options"> Option 1</label>
+                </div>
+                <div class="col-xs-4">
+                    <label><input type="checkbox" name="options"> Option 2</label>
+                </div>
+                <div class="col-xs-4">
+                    <label><input type="checkbox" name="options"> Option 3</label>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <input class="form-control" type="text" placeholder="text here" required>
+                    </div>
+                    <div class="col-xs-4">
+                        <button class="btn btn-default" type="submit"><i class="fa fa-paper-plane"></i>Submit</button>
+                    </div>
+                </div>
+            </form>
+            
+            <h3 class="text-primary text-center">jQuery Playground</h3>
+            <div class="row">
+                <div class="col-xs-6">
+                    <h4>#left-well</h4>
+                    <div class="well" id="left-well">
+                        <button class="btn btn-default target" id="target1">#target1</button>
+                        <button class="btn btn-default target" id="target2">#target2</button>
+                        <button class="btn btn-default target" id="target3">#target3</button>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <h4>#right-well</h4>
+                    <div class="well" id="right-well">
+                        <button class="btn btn-default target" id="target4">#target4</button>
+                        <button class="btn btn-default target" id="target5">#target5</button>
+                        <button class="btn btn-default target" id="target6">#target6</button>
+                    </div>
+                </div>
             </div>
-            </div>
-            <div class="col-xs-6">
-            <h4>#right-well</h4>
-            <div class="well" id="right-well">
-                <button class="btn btn-default target" id="target4">#target4</button>
-                <button class="btn btn-default target" id="target5">#target5</button>
-                <button class="btn btn-default target" id="target6">#target6</button>
-            </div>
-            </div>
+
         </div>
-    </div>
-</body>
+    </body>
 </html>
